@@ -1,0 +1,4 @@
+Hello, this is a test file.
+This line will be copied to another file.
+File handling in C++ is interesting!
+Good luck with your coding.
