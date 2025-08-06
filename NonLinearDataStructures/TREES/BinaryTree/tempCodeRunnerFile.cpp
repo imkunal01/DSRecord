@@ -14,7 +14,6 @@ class Node{
     }
 
 };
-
 Node* BinaryTree(){
     int x;
     cin>>x;
@@ -56,9 +55,7 @@ int main(){
         size++;
         if(temp->left) q.push(temp->left);
         if(temp->right) q.push(temp->right);
-        
     }
-
     cout<<"Size of Binary Tree: "<<size<<endl;
     return 0;
 

@@ -33,7 +33,7 @@ void printA(int arr[], int size) {
   cout << endl;
 }
 int main() {
-  int arr[] = {5, 2, 8, 3, 1, 6, 4};
+  int arr[] = {5, 2, 8, 3, 1, 6, 4,7};
   int n = sizeof(arr) / sizeof(arr[0]);
   printA(arr, n);
   quick(arr, 0, n-1);

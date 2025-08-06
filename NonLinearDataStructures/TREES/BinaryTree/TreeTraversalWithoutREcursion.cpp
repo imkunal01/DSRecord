@@ -84,6 +84,23 @@ vector<int>postorder(Node* root){
     }
     return res;
 }
+int maxDepth(Node* root) {
+    if (!root) return 0;
+    queue<Node*> q;
+    q.push(root);
+    int depth = 0;
+    while (!q.empty()) {
+        int size = q.size();
+        depth++;
+        for (int i = 0; i < size; i++) {
+            Node* node = q.front();
+            q.pop();    
+            if (node->left) q.push(node->left);
+            if (node->right) q.push(node->right);
+        }
+    }
+    return depth;
+}
 Node* BinaryTree(){
     int x;
     cin>>x;
