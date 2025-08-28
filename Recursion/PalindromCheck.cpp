@@ -15,7 +15,7 @@ int rev(int n){
         return 0;
     }
     cout<<n<<" ";
-    rev(n+1);
+    rev(n-1);
 }
 
 int main(){

@@ -1,6 +1,11 @@
 {
     "files.associations": {
         "*.embeddedhtml": "html",
-        "new": "cpp"
+        "new": "cpp",
+        "iostream": "cpp",
+        "algorithm": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "queue": "cpp"
     }
 }
