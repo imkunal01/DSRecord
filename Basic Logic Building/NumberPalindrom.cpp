@@ -14,6 +14,6 @@ int main(){
         cout<<"palindrom hai boss";
     }
     else{
-        cout<<"ye to palindrom nhi hai bhidu";
+        cout<<"ye to palindrom nhi hai ";
     }
 }

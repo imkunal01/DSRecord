@@ -8,8 +8,8 @@ int countDigit(int n){
 }
 bool helper(int n,int div){
     if(n<10) return true;
-    int l = n/div;
-    int r = n%10;
+    int l = n/div; //first digit
+    int r = n%10; //last digit
     if(l!=r){
         return false;
     }
