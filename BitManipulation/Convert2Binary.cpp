@@ -11,8 +11,12 @@ string ConverToBinary(int n){
     return res;
 }
 
+
 int main(){
     int n = 13;
-    cout<<ConverToBinary(n);
+    vector<int>arr= {1,2,1,2,8};
+    cout<<ConverToBinary(n)<<endl;
+    // cout<<singleNum(arr);
+    // cout << bitset<4>(n);
 
 }
