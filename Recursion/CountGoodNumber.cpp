@@ -24,3 +24,4 @@ int main(){
     int n = 2;
     cout<<"Achhi Sankhya hai: "<<countGoodNum(n);
 }
+// this is not recursivly 
