@@ -1,26 +1,12 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
-const long long MOD = 1e9+7;
-long long powerCount(long long base, long long exp){
-    long long res = 1;
-    while(exp>0){
-        if(exp%2 == 1){
-            res = (res*base)%MOD;
-        }
-        base = (base*base) %MOD;
-        exp/=2;
-    }
-    return res;
+int fact(int n){
+    if(n==0 || n==1) return 1;
+    return n*fact(n-1);
 }
-long long countGoodNum(long long n){
-    long long even = (n+1)/2;
-    long long odd = n/2;
-    long long evenCount = powerCount(5,even);
-    long long oddCount = powerCount(4,odd);
-    return (evenCount*oddCount)% MOD;
-
-}
-int main(){
-    int n = 2;
-    cout<<"Achhi Sankhya hai: "<<countGoodNum(n);
+int main() {
+    int n = 5;
+    cout<<fact(n)<<" ";
+    cout<<endl;
+    return 0;
 }
