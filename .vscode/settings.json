@@ -69,7 +69,7 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "valarray": "cpp",
-        "kd":"cpp"
-        // lmlmlm
+        "kd": "cpp",
+        "stack": "cpp"
     }
 }

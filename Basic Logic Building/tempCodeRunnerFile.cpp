@@ -1,19 +1,22 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 int main(){
-    int x = 34433443;
-    int rev= 0;
-    int org = x;
-    bool flag = false;
-    while(x>0){
-        int rem = x%10; // get the last digit
-        rev = rev*10 + rem; // add the last digit to the reversed number
-        x = x/10; // removes the last digit
+    // pascal triangle you have give a number n you have to provide array of n rows with pascal triangle take vector instead of normal array
+    int n;
+    cin>>n;
+    vector<vector<int>> pascal(n);
+    for(int i=0;i<n;i++){
+        pascal[i].resize(i+1);
+        pascal[i][0]=pascal[i][i]=1;
+        for(int j=1;j<i;j++){
+            pascal[i][j]=pascal[i-1][j-1]+pascal[i-1][j];
+        }
     }
-    if(rev== org){
-        cout<<"palindrom hai boss";
-    }
-    else{
-        cout<<"ye to palindrom nhi hai bhidu";
+    for(int i=0;i<n;i++){
+        for(int j=0;j<pascal[i].size();j++){
+            cout<<pascal[i][j]<<" ";
+        }
+        cout<<endl;
     }
 }
