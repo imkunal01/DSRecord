@@ -20,3 +20,4 @@ int main(){
    cout<<c<<endl;
    cout<<cnt;
 }
+

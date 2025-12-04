@@ -20,5 +20,6 @@ void erstho(int n){
 int main(){
     int n= 12;
     erstho(n);
-    
+
 }
+
