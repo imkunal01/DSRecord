@@ -13,7 +13,7 @@ int main(){
             cin>>a[i];
         }
         int res= k-n;
-        for(int i =1;i<n-1;i++){
+        for(int i =1;i<n;i++){
             if(i%2 ==1){
                 res-=1;
             }
