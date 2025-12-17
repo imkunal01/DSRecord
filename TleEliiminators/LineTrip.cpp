@@ -2,24 +2,28 @@
 using namespace std;
 
 int main(){
+    int t;
+    cin>>t;
+    while(t--){
+
         int n,k;
-        cout<<"enter the size: ";
         cin>>n;
-        cout<<"enter the road lenth: ";
         cin>>k;
-        cout<<"enter the array Ele: ";
-        vector<long long> a(n);
+        vector<long long> a;
+        a.push_back(0);
         for(int i=0;i<n;i++){
-            cin>>a[i];
+            long long p;
+            cin>>p;
+            a.push_back(p);
         }
-        int res= k-n;
+
+        a.push_back(k);
+        n=a.size();
+        long long res = INT_MIN;
         for(int i =1;i<n;i++){
-            if(i%2 ==1){
-                res-=1;
-            }
-            else if(i%2==0){
-                res+=1;
-            }
+            if(i==n-1) res = max(res , 2*(a[i] -a[i-1]));
+            else res = max(res , a[i] -a[i-1]);
         }
-        cout<<res;
+        cout<<res<<endl;
+    }
 }
