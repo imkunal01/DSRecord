@@ -1,28 +1,4 @@
-<<<<<<< HEAD
-#include <bits/stdc++.h>
-using namespace std;
-
-int main(){
-    int n, m;
-    cin >> n >> m;
-
-    vector<vector<int>> matrix(n, vector<int>(n, 0));
-
-    for(int i = 0; i < m; i++){
-        int u, v;
-        cin >> u >> v;
-
-        matrix[u][v] = 1;
-        matrix[v][u] = 1; // undirected
-    }
-    
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            cout << matrix[i][j] << " ";
-        }
-        cout << endl;
-    }
-=======
+// adjecency matrix for undirected graph
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -34,7 +10,37 @@ int main(){
     for(int i = 0;i<edge;i++){
         cin>>u>>v;
         Adj[u][v] =1;
-        Adj[v][u] =1;
+        Adj[v][u] =1;// if we remove this line it will be directed graph
     }
->>>>>>> 4a9d6733e646b4b245351020a85b6d2c039033d2
+     for(int i = 0; i < vertex; i++){
+        for(int j = 0; j < vertex; j++){
+            cout << Adj[i][j] << " ";
+        }
+        cout << endl;
+    }
 }
+
+
+// for weighted undirected graph
+/*
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int vertex,edge;
+    cin>>vertex>>edge;
+    vector<vector<int>> Adj(vertex,vector<int>(vertex,0));
+    int u,v,weight;
+    for(int i = 0;i<edge;i++){
+        cin>>u>>v>>weight;
+        Adj[u][v] =weight;
+        Adj[v][u] =weight;// if we remove this line it will be directed graph
+    }
+     for(int i = 0; i < vertex; i++){
+        for(int j = 0; j < vertex; j++){
+            cout << Adj[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+*/
+// for directed weighted graph just remove the line "Adj[v][u] =weight;"
