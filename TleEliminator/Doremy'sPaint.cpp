@@ -13,19 +13,14 @@ int main(){
             cin>>ele;
             v.push_back(ele);
         }
-
-       for(int i=0;i<n-1;i++){
-           if(v[i+1]-v[i]>1){
-               v[i+1] = v[i]+1;
-           }
-       }
-         if(v[n-1] == n){
-              cout<<"YES"<<endl;
-         }
-         else{
-              cout<<"NO"<<endl;
-         }
-         
-
+        int sum = 0;
+        for(int i=0;i<n-1;i++) sum+=v[i];
+            
+        for(int i=0;i<n;i++){
+            if(v[i] == v[i+1] && v[i+1] == v[i+2]){
+                sum -= v[i];
+                i+=2;
+            }
+        }
     }
 }
