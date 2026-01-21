@@ -1,3 +1,4 @@
+//temoplate to calculate sum of revenue
 #include<iostream>
 #include<iomanip>
 using namespace std;
