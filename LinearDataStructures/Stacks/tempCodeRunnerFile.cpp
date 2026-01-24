@@ -1,44 +1,55 @@
 #include <iostream>
-#include <vector>
+#include<string>
 #include<algorithm>
-
-std::vector<int> beautifulArray(int n) {
-    // Create a vector of numbers from 1 to n
-    std::vector<int> nums(n);
-    for (int i = 0; i < n; i++) {
-        nums[i] = i + 1;
+using namespace std;
+class Node{
+public:
+    int data;
+    Node* next;
+    Node(int d){
+        data = d;
+        next = NULL;
     }
-    
-    // Sort the vector in ascending order
-    std::sort(nums.begin(), nums.end());
-    
-    // Initialize an empty vector to store the beautiful array
-    std::vector<int> beautiful;
-    
-    // Iterate over the sorted vector and add every other number to the beautiful array
-    for (int i = 0; i < n; i += 2) {
-        beautiful.push_back(nums[i]);
+};
+class Stack{
+    Node* top;
+    int size; // actual size of stack
+public:
+    Stack(){
+        top = NULL;
+        size = 0;
     }
-    
-    // Return the beautiful array
-    return beautiful;
-}
-
-// Example usage:
+    void push(int data){
+        Node* temp = new Node(data);
+        if(temp == NULL){
+            return;
+        }
+        else{
+            temp->next = top;
+            top = temp;
+            size++;
+            cout<<data<<" ";
+        }
+    }
+    void pop(){
+        if(top == NULL ){
+            return;
+        }
+        else{
+        Node* temp = top;
+        top = top->next;
+        delete temp;
+        size--;
+        }
+    }
+};
 int main() {
-    int n = 4;
-    std::vector<int> result = beautifulArray(n);
-    for (int num : result) {
-        std::cout << num << " ";
-    }
-    std::cout << std::endl;
-    
-    n = 5;
-    result = beautifulArray(n);
-    for (int num : result) {
-        std::cout << num << " ";
-    }
-    std::cout << std::endl;
-    
+    Stack s;
+    s.push(5);
+    s.push(4);
+    s.push(3);
+    s.push(2);
+    s.push(1);
+    s.pop();
     return 0;
 }

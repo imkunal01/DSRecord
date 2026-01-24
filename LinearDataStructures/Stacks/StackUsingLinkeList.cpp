@@ -10,8 +10,6 @@ public:
         data = d;
         next = NULL;
     }
-
-
 };
 class Stack{
     Node* top;
@@ -52,5 +50,6 @@ int main() {
     s.push(3);
     s.push(2);
     s.push(1);
+    s.pop();
     return 0;
 }

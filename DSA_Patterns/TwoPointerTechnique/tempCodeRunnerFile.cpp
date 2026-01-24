@@ -1,22 +1,24 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
 using namespace std;
 int main(){
-    vector<int>v= {1,2,4,7,11};
-    int t = 9;
-    int l = 0;
-    int r = v.size()-1;
-    bool found = false;
-    while(l<r){
-        if(v[l]+v[r] == t){
-            found = true;
-            break;
+    vector<int>v = {1,2,3,4,5,6};
+    int target = 10;
+    int left=0;
+    int right= v.size()-1;
+    int currsum = 0;
+    while(left<right){
+        currsum = v[left] + v[right];
+        if(currsum == target){
+            cout<<"Found the index: "<<v[left]<<" and "<<v[right]<<endl;
         }
-        else if(v[l]+v[r] <t){
-            l++;
+        if(currsum>target){
+            right--;
         }
-        else r--;
-
+        else{
+            left++;
+        }
     }
-    if(!found)cout<<"oops not here.."<<endl;
-    else cout<<"Yup got it.."<<endl;
+    cout<<"The total sum: "<<currsum;
+    return 0;
 }

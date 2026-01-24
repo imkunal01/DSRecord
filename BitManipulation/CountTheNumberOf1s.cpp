@@ -10,13 +10,12 @@ bool issorted(vector<int>& arr) {
         else{
             isSorted = false;
         }
-
     }
     return true;
 }
 
 int main(){
-    vector<int>& arr = {10,20,30,40};
+    vector<int>arr = {10,20,30,40};
 
     cout<<issorted(arr);
     // int n =11;
