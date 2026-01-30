@@ -5,31 +5,54 @@
 using namespace std;
 
 // Function to perform BFS on the graph
-void BFS(int startNode, const vector<vector<int>>& adjList) {
-    vector<bool> visited(adjList.size(), false); // To keep track of visited nodes
-    queue<int> q; // Queue for BFS
+vector<int> BFS(int startNode, vector<vector<int>>& adjList) {
+    vector<bool> visited(adjList.size(), false);
+    queue<int> q;
+    vector<int> traversal;
 
-    visited[startNode] = true; // Mark the start node as visited
-    q.push(startNode); // Enqueue the start node
-
-    cout << "BFS Traversal: ";
+    visited[startNode] = true;
+    q.push(startNode);
 
     while (!q.empty()) {
         int currentNode = q.front();
         q.pop();
-        cout << currentNode << " "; // Process the current node
 
-        // Explore all neighbors of the current node
-        for (int neighbor : adjList[currentNode]){
+        traversal.push_back(currentNode);
+
+        for (int neighbor : adjList[currentNode]) {
             if (!visited[neighbor]) {
-                visited[neighbor] = true; // Mark as visited
-                q.push(neighbor); // Enqueue the neighbor
+                visited[neighbor] = true;
+                q.push(neighbor);
             }
         }
     }
 
-    cout << endl;
+    return traversal;
 }
+
+bool canVisitAllRooms(vector<vector<int>>& rooms) {
+        vector<bool> visited(rooms.size(), false);
+        queue<int> q;
+        visited[0] = true;
+        q.push(0);
+        
+        while(!q.empty()) {
+            int currentNode = q.front();
+            q.pop();
+            for(int i : rooms[currentNode]) {
+                if(!visited[i]) { 
+                    visited[i] = true;
+                    q.push(i);
+                }
+            }
+        }
+        
+        
+        for(bool v : visited) {
+            if(!v) return false;
+        }
+        return true;
+    }
 
 int main() {
     // Number of nodes and edges
