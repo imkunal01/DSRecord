@@ -1,25 +1,24 @@
-#include<iostream>
-#include<vector>
-#include<algorithm>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
 using namespace std;
-int main(){
-    int n = 6;
-    int arr[n] = {1,2,3,4,5,6};
-    int r= 0;
+int main() {
+    vector<int> arr = {1, 2, 3, 4, 5, 6};
+    int n = arr.size();
     int l = 0;
     int maxlen = 0;
     int sum = 0;
     int target = 14;
-    while(l<r){
-        sum = sum+arr[r];
-        if(sum>target){
-            sum = sum-arr[l];
+
+    for (int r = 0; r < n; ++r) {
+        sum += arr[r];
+        while (sum > target) {
+            sum -= arr[l];
             l++;
         }
-        if(sum<=target){
-            maxlen = max(sum,r-l+1);
-            r++;
-        }
+        maxlen = max(maxlen, r - l + 1);
     }
-    cout<<maxlen;
+    cout << maxlen << endl;
+    return 0;
 }
