@@ -132,8 +132,20 @@ struct ListNode {
 };
  
 class Solution {
-public:
-    ListNode* removeElements(ListNode* head, int target) {
+    public:
+    ListNode* removeElements(ListNode* head, int val) {
+            ListNode* temp = new ListNode(0);
+            temp->next = head;
+            ListNode* curr = temp;
+            while (curr->next != NULL) {
+                if (curr->next->val == val)
+                    curr->next = curr->next->next;
+                else
+                    curr = curr->next;
+            }
+            return temp->next;
+        }
+    ListNode* removeElementsOptim(ListNode* head, int target) {
         if(target == head->val){
             ListNode* temp = head;
             head = head->next;
@@ -160,19 +172,7 @@ public:
         return head;
     }
 };
-ListNode* removeElements(ListNode* head, int val) {
-        ListNode* temp = new ListNode(0);
-        temp->next = head;
-        ListNode* curr = temp;
-        while (curr->next != NULL) {
-            if (curr->next->val == val)
-                curr->next = curr->next->next;
-            else
-                curr = curr->next;
-        }
-        return temp->next;
-    }
-    
+
 Node* insertAtHead(Node* head,int val){
     Node* temp = new Node(val,head);
     return temp;
